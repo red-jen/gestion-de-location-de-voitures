@@ -148,8 +148,8 @@ while($row = $result->fetch_assoc()) {
  
     
             <!-- Liste des locations -->
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-xl font-bold mb-4">Liste des locations</h2>
+            <div class="bg-white rounded-lg shadow-lg p-6 w-fit">
+                <h2 class="text-xl font-bold mb-4  ">Liste des locations</h2>
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
