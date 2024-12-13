@@ -62,7 +62,7 @@ while($row = $result->fetch_assoc()) {
 <body class="bg-gray-100">
 <nav class="bg-blue-600 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">CarRental</h1>
+        <a href="./index.php"> <h1 class="text-2xl font-bold">CarRental</h1> </a>
             <div class="space-x-4">
                 <a href="./client.php" class="hover:text-gray-200">Clients</a>
                 <a href="./voitures.php" class="hover:text-gray-200">Voitures</a>
