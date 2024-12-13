@@ -54,17 +54,56 @@ $activeRentals = $stmt->fetch_assoc()['total'];
         <div class="mt-8 bg-white p-6 rounded-lg shadow">
             <h2 class="text-2xl font-bold mb-4">Actions Rapides</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <a href="add_client.php" class="bg-blue-500 text-white p-4 rounded text-center hover:bg-blue-600">
+                <button id="clientpop"  class="bg-blue-500 text-white p-4 rounded text-center hover:bg-blue-600">
                     Nouveau Client
-                </a>
-                <a href="add_car.php" class="bg-green-500 text-white p-4 rounded text-center hover:bg-green-600">
+                </button>
+                <a id="voiturepop" class="bg-green-500 text-white p-4 rounded text-center hover:bg-green-600">
                     Nouvelle Voiture
                 </a>
-                <a href="add_rental.php" class="bg-purple-500 text-white p-4 rounded text-center hover:bg-purple-600">
+                <a id="locationspop"  class="bg-purple-500 text-white p-4 rounded text-center hover:bg-purple-600">
                     Nouvelle Location
                 </a>
             </div>
         </div>
     </main>
+    <!-- Modal for client -->
+<div id="clientModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <h2 class="text-xl font-bold mb-4">Ajouter un nouveau client</h2>
+        <form action="./client.php" method="POST" class="space-y-4">
+            <input type="hidden" name="action" value="ajouter">
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Nom</label>
+                    <input type="text" name="nom" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Adresse</label>
+                    <textarea name="adresse" required
+                              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Téléphone</label>
+                    <input type="tel" name="telephone" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+            </div>
+            <div class="text-right mt-4">
+                <button type="button" onclick="closeClientModal()"
+                        class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 mr-2">
+                    Annuler
+                </button>
+                <button type="submit"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                    Ajouter le client
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+    <script src="/script.js"></script>
+
 </body>
 </html>
