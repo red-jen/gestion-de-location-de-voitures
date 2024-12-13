@@ -137,17 +137,18 @@ while($row = $result->fetch_assoc()) {
                     <thead class="bg-gray-50">
                         <tr>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Véhicule
+                                Voiture marque
                             </th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Détails
+                                model
                             </th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Prix/jour
+                                  matricule
                             </th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Statut
+                                annee
                             </th>
+                          
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Actions
                             </th>
@@ -158,26 +159,23 @@ while($row = $result->fetch_assoc()) {
                         <tr>
                             <td class="px-6 py-4">
                                 <div class="text-sm font-medium text-gray-900">
-                                    <?= htmlspecialchars($voiture['marque']) . ' ' . htmlspecialchars($voiture['modele']) ?>
+                                    <?= htmlspecialchars($voiture['marque'])  ?>
                                 </div>
-                                <div class="text-sm text-gray-500">
-                                    <?= htmlspecialchars($voiture['immatriculation']) ?>
-                                </div>
+                               
                             </td>
                             <td class="px-6 py-4">
                                 <div class="text-sm text-gray-900">
-                                    Année: <?= htmlspecialchars($voiture['annee']) ?>
+                                    <?= htmlspecialchars($voiture['modele']) ?>
                                 </div>
                               
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-900">
-                                <?= number_format($voiture['prix_jour'], 2) ?> €
+                            <?= htmlspecialchars($voiture['immatriculation']) ?>
                             </td>
                             <td class="px-6 py-4">
-                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
-                                    <?= $voiture['statut'] === 'disponible' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' ?>">
-                                    <?= htmlspecialchars($voiture['statut']) ?>
-                                </span>
+                            <div class="text-sm text-gray-900">
+                                    <?= htmlspecialchars($voiture['annee']) ?>
+                                </div>
                             </td>
                             <td class="px-6 py-4 text-sm font-medium">
                                 <button onclick="editVoiture(<?= $voiture['id_voiture'] ?>)"
