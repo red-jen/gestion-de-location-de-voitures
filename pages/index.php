@@ -103,7 +103,125 @@ $activeRentals = $stmt->fetch_assoc()['total'];
         </form>
     </div>
 </div>
+
+
+
+
+
+<div id="voituremodel" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <h2 class="text-xl font-bold mb-4">Ajouter une nouvelle voiture</h2>
+        <form action="./voitures.php" method="POST" class="space-y-4">
+            <input type="hidden" name="action" value="ajouter">
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Marque</label>
+                    <input type="text" name="marque" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Modèle</label>
+                    <input type="text" name="modele" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Immatriculation</label>
+                    <input type="text" name="immatriculation" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Année</label>
+                    <input type="number" name="annee" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+            </div>
+            <div class="text-right mt-4">
+                <button type="button" onclick="closevoituremodel()"
+                        class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 mr-2">
+                    Annuler
+                </button>
+                <button type="submit"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                    Ajouter la voiture
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<div id="contratmodal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <h2 class="text-xl font-bold mb-4">Ajouter un nouveau contrat</h2>
+        <form action="./location.php" method="POST" class="space-y-4">
+            <input type="hidden" name="action" value="ajouter">
+            <div class="space-y-4">
+            <div>
+                    <label class="block text-sm font-medium text-gray-700">Client</label>
+                    <select name="id_client" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                            <option value="">Sélectionner un client
+                            <?php
+            $sql = "SELECT * from client";
+            $result = mysqli_query($conn,$sql);
+            while($i = mysqli_fetch_row($result)){
+                echo '<option value="'.$i[0].'">'.$i[1].'</option>';
+            }
+            ?>
+                            </option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Voiture</label>
+                    <select name="id_voiture" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                            <option value="">Sélectionner un client
+                            <?php
+            $sql = "SELECT * from voiture";
+            $result = mysqli_query($conn,$sql);
+            while($i = mysqli_fetch_row($result)){
+                echo '<option value="'.$i[0].'">'.$i[1].'</option>';
+            }
+            ?>
+                            </option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Date de début</label>
+                    <input type="date" name="date_debut" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Date de fin</label>
+                    <input type="date" name="date_fin" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Prix Total</label>
+                    <input type="number" name="prix_total" required
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+             
+            </div>
+            <div class="text-right mt-4">
+                <button type="button" onclick="closecontratmodal()"
+                        class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 mr-2">
+                    Annuler
+                </button>
+                <button type="submit"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                    Ajouter le contrat
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
     <script src="/script.js"></script>
+    <script src="/tailwind.config.js"> </script>
 
 </body>
 </html>

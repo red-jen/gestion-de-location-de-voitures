@@ -1,9 +1,55 @@
 
 let locationspop = document.getElementById('locationspop');
+const contratmodal = document.getElementById('contratmodal');
 let voiturepop = document.getElementById('voiturepop');
+const voituremodel = document.getElementById('voituremodel');
+
 // Get modal elements
 const clientModal = document.getElementById('clientModal');
 const clientButton = document.getElementById('clientpop');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function opencontratmodal() {
+    contratmodal.classList.remove('hidden');
+}
+
+// Function to close client modal
+function closecontratmodal() {
+    contratmodal.classList.add('hidden');
+}
+
+// Event listeners
+locationspop.addEventListener('click', opencontratmodal);
+
+
+
+
+
+function openvoituremodel() {
+    voituremodel.classList.remove('hidden');
+}
+
+// Function to close client modal
+function closevoituremodel() {
+    voituremodel.classList.add('hidden');
+}
+
+// Event listeners
+voiturepop.addEventListener('click', openvoituremodel);
 
 // Function to open client modal
 function openClientModal() {
@@ -19,11 +65,7 @@ function closeClientModal() {
 clientButton.addEventListener('click', openClientModal);
 
 // Close modal when clicking outside
-window.addEventListener('click', function(event) {
-    if (event.target === clientModal) {
-        closeClientModal();
-    }
-});
+
 // clientpop.addEventListener('click' , ()=>{
 //     window.alert('heeey')
 //     // let div = document.createElement('div');
