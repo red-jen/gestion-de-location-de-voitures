@@ -78,7 +78,7 @@ while($row = $result->fetch_assoc()) {
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
-<nav class="bg-blue-600 text-white p-4">
+<nav class="bg-blue-600 text-white p-4 ">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">CarRental</h1>
             <div class="space-x-4">
@@ -148,7 +148,7 @@ while($row = $result->fetch_assoc()) {
  
     
             <!-- Liste des locations -->
-            <div class="bg-white rounded-lg shadow-lg p-6 w-fit">
+            <div class="bg-white rounded-lg shadow-lg p-6 w-auto  lg:w-fit">
                 <h2 class="text-xl font-bold mb-4  ">Liste des locations</h2>
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200">
