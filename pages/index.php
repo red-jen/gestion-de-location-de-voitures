@@ -8,8 +8,8 @@ $totalClients = $stmt->fetch_assoc()['total'];
 $stmt = $conn->query("SELECT COUNT(*) as total FROM voiture");
 $totalCars = $stmt->fetch_assoc()['total'];
 
-// $stmt = $conn->query("SELECT COUNT(*) as total FROM location WHERE status = 'active'");
-// $activeRentals = $stmt->fetch_assoc()['total'];
+$stmt = $conn->query("SELECT COUNT(*) as total FROM location");
+$activeRentals = $stmt->fetch_assoc()['total'];
 ?>
 
 <!DOCTYPE html>
